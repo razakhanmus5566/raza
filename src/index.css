@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "Courier Prime", "Courier New", Courier, monospace;
+  --font-sans: var(--font-mono);
+
+  --color-neon-primary: #00ff9d;
+  --color-neon-secondary: #ff00ff;
+  --color-bg-deep: #050505;
+  --color-bg-card: #0c0c0c;
+  --color-bg-panel: #0a0a0a;
+  --color-bg-sidebar: #080808;
+  --color-border-subtle: #1a1a1a;
+  
+  --shadow-neon-primary: 0 0 10px rgba(0, 255, 157, 0.4);
+  --shadow-neon-secondary: 0 0 10px rgba(255, 0, 255, 0.4);
+}
+
+@layer base {
+  body {
+    @apply bg-bg-deep text-[#e0e0e0] font-mono selection:bg-neon-primary selection:text-black;
+  }
+}
+
+.theme-border { border: 1px solid var(--color-border-subtle); }
+.theme-header-border { border-bottom: 2px solid var(--color-border-subtle); }
+.theme-footer-border { border-top: 2px solid var(--color-border-subtle); }
+
+.neon-text-primary { color: var(--color-neon-primary); text-shadow: 0 0 8px rgba(0, 255, 157, 0.3); }
+.neon-text-secondary { color: var(--color-neon-secondary); text-shadow: 0 0 8px rgba(255, 0, 255, 0.3); }
+
+.track-card {
+  @apply bg-bg-card border border-border-subtle p-3 transition-all duration-200 cursor-pointer;
+}
+.track-card:hover {
+  @apply bg-[#151515];
+}
+.track-card.active {
+  @apply border-neon-secondary shadow-neon-secondary;
+}
+
+.stat-box {
+  @apply bg-bg-card border border-border-subtle p-5 text-center;
+}
